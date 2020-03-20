@@ -15,13 +15,14 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-  const id = req.body.params;
+  const id = req.params.id;
   Recipes.getShoppingList(id)
     .then(data => {
       console.log(data, "data from get list");
       res.status(200).json(data);
     })
     .catch(err => {
+      console.log(err, "errpr");
       res.status(500).json({ message: "server error" });
     });
 });

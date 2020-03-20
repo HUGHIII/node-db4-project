@@ -31,7 +31,7 @@ exports.up = function(knex) {
     })
 
     .createTable("recipe_ingredients", tbl => {
-      tbl.increments();
+      tbl.primary(["recipe_id", "ingredient_id"]);
 
       tbl
         .integer("recipe_id")

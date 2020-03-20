@@ -15,7 +15,7 @@ function getShoppingList(id) {
     .join(
       "ingredients",
       "ingredients.ingredient_id",
-      "=",
+
       "recipe_ingredients.ingredient_id"
     )
     .where({ recipe_id: id })
